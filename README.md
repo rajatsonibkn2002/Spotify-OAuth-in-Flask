@@ -58,6 +58,11 @@ Start the server
   python3 flask-app.py
 ```
 
+## Usage
+- Open the endpoint given below, login using spotify to generate an access token and a refresh token(stored in a txt file)
+```http://localhost:5000/login```
+- If you wanna get a refreshed access token, simply open the below endpoint
+```http://localhost:5000/refreshtoken```
 
 ## Authors
 
