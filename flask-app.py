@@ -8,6 +8,7 @@ client_auth = base64.b64encode(client_auth.encode("utf-8"))
 client_auth = client_auth.decode("ascii")
 
 redirect_uri = 'http://localhost:5000/callback'
+scope = 'user-read-currently-playing'
 
 app = Flask(__name__)
 
@@ -19,7 +20,6 @@ def generateRandomString(N):
 @app.route('/login', methods=['GET'])
 def login():
     state = generateRandomString(16)
-    scope = 'user-read-currently-playing'
     redirect_url = f'https://accounts.spotify.com/authorize?response_type=code&client_id={client_id}&scope={scope}&redirect_uri={redirect_uri}&state={state}'
     return redirect(redirect_url)
 
